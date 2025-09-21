@@ -7,18 +7,18 @@ export const StarBackground = () => {
   const [stars, setStars] = useState([]);
   const [meteors, setMeteors] = useState([]);
 
-  useEffect(() => {
-    generateStars();
-    generateMeteors();
+  // useEffect(() => {
+  //   generateStars();
+  //   generateMeteors();
 
-    const handleResize = () => {
-      generateStars();
-    };
+  //   const handleResize = () => {
+  //     generateStars();
+  //   };
 
-    window.addEventListener("resize", handleResize);
+  //   window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
   const generateStars = () => {
     const numberOfStars = Math.floor(

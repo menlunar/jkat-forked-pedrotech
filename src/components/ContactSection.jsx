@@ -1,4 +1,5 @@
 import {
+  Facebook,
   Instagram,
   Linkedin,
   Mail,
@@ -33,12 +34,11 @@ export const ContactSection = () => {
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Get In <span className="text-primary"> Touch</span>
+          Join the <span className="text-primary"> Team</span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Have a project in mind or want to collaborate? Feel free to reach out.
-          I'm always open to discussing new opportunities.
+          If you're thinking about trying a class, have questions about our programs, or want to see what we’re all about, get in touch! We're here to guide you every step of the way.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -59,7 +59,7 @@ export const ContactSection = () => {
                     href="mailto:hello@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    hello@gmail.com
+                    jkat@mail.com
                   </a>
                 </div>
               </div>
@@ -84,7 +84,8 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium"> Location</h4>
                   <a className="text-muted-foreground hover:text-primary transition-colors">
-                    Vancouver, BC, Canada
+                    Allerey St. , Brgy. 1, <br />
+                    Lucena City, Quezon Province, Philippines
                   </a>
                 </div>
               </div>
@@ -94,17 +95,14 @@ export const ContactSection = () => {
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
                 <a href="#" target="_blank">
-                  <Linkedin />
-                </a>
-                <a href="#" target="_blank">
-                  <Twitter />
+                  <Facebook />
                 </a>
                 <a href="#" target="_blank">
                   <Instagram />
                 </a>
-                <a href="#" target="_blank">
+                {/* <a href="#" target="_blank">
                   <Twitch />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -130,7 +128,7 @@ export const ContactSection = () => {
                   name="name"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="Pedro Machado..."
+                  placeholder="John Snow..."
                 />
               </div>
 
