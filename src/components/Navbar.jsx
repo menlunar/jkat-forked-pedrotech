@@ -1,91 +1,46 @@
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Home, User, Dumbbell, Mail } from "lucide-react"; // example icons
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { name: "Home", href: "#hero" },
-  { name: "About", href: "#about" },
-  // { name: "Skills", href: "#skills" },
-  { name: "Programs", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "#hero", icon: Home },
+  { name: "About", href: "#about", icon: User },
+  { name: "Programs", href: "#projects", icon: Dumbbell },
+  { name: "Contact", href: "#contact", icon: Mail },
 ];
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.screenY > 10);
+      setIsScrolled(window.scrollY > 10); // ✅ fixed typo (was screenY)
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <nav
       className={cn(
-        "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
+        "fixed top-4 left-4 z-50 flex flex-col items-center gap-4 px-3 py-4 rounded-2xl shadow-lg backdrop-blur-md bg-background/70 border border-foreground/10 transition-all duration-300",
+        isScrolled && "bg-background/90 shadow-xl"
       )}
     >
-      <div className="container flex items-center justify-between">
-        <a
-          className="text-xl font-bold text-primary flex items-center"
-          href="#hero"
-        >
-          <span className="relative z-10">
-            <span className="text-glow text-foreground">JKAT</span>{" "}
-            Training Alley
-          </span>
-        </a>
-
-        {/* desktop nav */}
-        <div className="hidden md:flex space-x-8">
-          {navItems.map((item, key) => (
-            <a
-              key={key}
-              href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-
-        {/* mobile nav */}
-
-        <button
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground z-50"
-          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
-        </button>
-
-        <div
-          className={cn(
-            "fixed inset-0 bg-background/95 backdroup-blur-md z-40 flex flex-col items-center justify-center",
-            "transition-all duration-300 md:hidden",
-            isMenuOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
-          )}
-        >
-          <div className="flex flex-col space-y-8 text-xl">
-            {navItems.map((item, key) => (
-              <a
-                key={key}
-                href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
+      {navItems.map((item, key) => {
+        const Icon = item.icon;
+        return (
+          <a
+            key={key}
+            href={item.href}
+            className="text-foreground/70 hover:text-primary transition-all duration-200 hover:scale-110"
+            title={item.name}
+          >
+            <Icon size={22} />
+          </a>
+        );
+      })}
     </nav>
   );
 };
