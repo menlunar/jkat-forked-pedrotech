@@ -42,7 +42,7 @@ const projects = [
     title: "Striking",
     description: "Traditional karate and modern striking techniques combining punches, kicks, blocks, and sweeps.",
     image: "/projects/striking_pic.png",
-    tags: ["Traditional Karate", "Punching", "Kicking"],
+    tags: ["Traditional Karate", "Kyokushin", "Full Contact"],
     demoUrl: "#",
     githubUrl: "#",
   },

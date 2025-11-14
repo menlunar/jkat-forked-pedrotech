@@ -107,7 +107,7 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          <div
+          {/* <div
             className="bg-card p-8 rounded-lg shadow-xs"
             onSubmit={handleSubmit}
           >
@@ -178,7 +178,7 @@ export const ContactSection = () => {
                 <Send size={16} />
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

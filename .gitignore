@@ -7,18 +7,45 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependency directories
+node_modules/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Build output
+dist/
+dist-ssr/
+build/
+
+# Local environment files
+*.local
+.env
+.env.*.local
+
+# OS and IDE files
 .DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# VS Code settings
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Media and assets (large files)
+public/videos/
+public/assets/videos/
+src/assets/videos/
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Temporary or cache directories
+.cache/
+.tmp/
+coverage/
